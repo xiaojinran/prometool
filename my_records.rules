@@ -1,0 +1,21 @@
+groups:
+- name: example1
+  interval: 2m
+  rules:
+  - record: job:http_inprogress_requests:sum1
+    expr: round(rate(node_cpu_seconds_total[5m]),2)
+    labels:
+      test: xxx
+      xiao: ddd
+  - record: job:http_inprogress_requests:sum2
+    expr: round(rate(node_cpu_seconds_total[5m]),2)
+- name: example3
+  interval: 4m
+  rules:
+  - record: job:http_inprogress_requests:sum3
+    expr: round(rate(node_cpu_seconds_total[5m]),2)
+    labels:
+      test: xxx
+      xiao: ddd
+  - record: job:http_inprogress_requests:sum4
+    expr: round(rate(node_cpu_seconds_total[5m]),2)
